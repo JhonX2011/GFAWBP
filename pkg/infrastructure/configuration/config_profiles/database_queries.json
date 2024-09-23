@@ -1,0 +1,8 @@
+{
+  "queries": [
+    {
+      "query_id": "name",
+      "query_value": "value"
+    }
+  ]
+}

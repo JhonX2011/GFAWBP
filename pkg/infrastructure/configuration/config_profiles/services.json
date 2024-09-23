@@ -1,0 +1,15 @@
+{
+  "http_rest_pool": [
+    {
+      "service_id": "service_name",
+      "timeout": 5000,
+      "disable_timeout": false,
+      "max_retry": 1,
+      "enable_cache": true,
+      "back_off_time": 100,
+      "path_url": "",
+      "target_id": "some-word",
+      "dial_timeout": 3000
+    }
+  ]
+}
