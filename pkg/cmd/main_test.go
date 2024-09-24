@@ -2,10 +2,11 @@ package main
 
 import (
 	"context"
+	"os"
 	"testing"
 
 	restclient "github.com/JhonX2011/GFAWBP/pkg/test/functional/rest_client"
-	"github.com/JhonX2011/GFAWBP/pkg/test/functional/steps/default"
+	defaultsteps "github.com/JhonX2011/GFAWBP/pkg/test/functional/steps/default"
 	"github.com/JhonX2011/GFAWBP/pkg/test/functional/steps/ping"
 	"github.com/JhonX2011/GFAWBP/pkg/test/functional/utils"
 	"github.com/JhonX2011/GOFunctionalTestsMocker/pkg/mock"
@@ -13,18 +14,20 @@ import (
 )
 
 const (
-	pingSceneryPath = "../../test/functional/features/ping"
-	mainSceneryPath = "../../test/functional/features/default"
+	pingSceneryPath = "../test/functional/features/ping"
+	mainSceneryPath = "../test/functional/features/default"
 )
 
 func TestSuites(t *testing.T) {
-	//Load environment variables if necessary
+	loadTestEnvironment()
+
 	go func() {
 		err := run()
 		if err != nil {
 			panic(err)
 		}
 	}()
+
 	err := utils.WaitServerRunning()
 	if err != nil {
 		t.Errorf("failed awaiting server up when runinng test suites")
@@ -52,7 +55,7 @@ func runMockServer(t *testing.T, err error, mockServer mock.Router) {
 	}()
 }
 
-func buildTestSuites(mocker mock.Mocker) []godog.TestSuite {
+func buildTestSuites(_ mock.Mocker) []godog.TestSuite {
 	var suites []godog.TestSuite
 	suites = append(suites,
 		buildSuite("Ping tests", pingSceneryInitializer, pingSceneryPath),
@@ -84,7 +87,7 @@ func defaultSceneryInitializer(mocker mock.Mocker) func(*godog.ScenarioContext) 
 	return func(s *godog.ScenarioContext) {
 		//configService, _ := configs.NewConfigService()
 		restClient := restclient.New()
-		featureBaseFunctions := defaultSteps.NewDefaultFeatureFunctions(s, restClient, mocker)
+		featureBaseFunctions := defaultsteps.NewDefaultFeatureFunctions(s, restClient, mocker)
 
 		s.Before(func(ctx context.Context, sc *godog.Scenario) (context.Context, error) {
 			featureBaseFunctions.Reset()
@@ -101,4 +104,8 @@ func pingSceneryInitializer(s *godog.ScenarioContext) {
 		pingFeature.Reset()
 		return ctx, nil
 	})
+}
+
+func loadTestEnvironment() {
+	os.Setenv("CONFIG_DIR", "../../pkg/test/functional/test_config_files/")
 }

@@ -1,4 +1,4 @@
-package defaultSteps
+package defaultsteps
 
 import (
 	restclient "github.com/JhonX2011/GFAWBP/pkg/test/functional/rest_client"

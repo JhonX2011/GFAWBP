@@ -1,0 +1,13 @@
+{
+  "mysql": [
+    {
+      "service_id": "base_db",
+      "dsn": "username:password@tcp(url:port)/db_name?timeout=100000ms&readTimeout=100000ms&writeTimeout=10000ms&parseTime=true",
+      "connections": [
+        {
+          "name": "default"
+        }
+      ]
+    }
+  ]
+}

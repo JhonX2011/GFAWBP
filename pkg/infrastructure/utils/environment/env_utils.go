@@ -7,7 +7,7 @@ import (
 	"os"
 	"strconv"
 
-	config "github.com/JhonX2011/GFAWBP/pkg/infrastructure/configuration/config_constants"
+	config "github.com/JhonX2011/GFAWBP/pkg/infrastructure/configuration/constants"
 )
 
 type OsEnvLookup struct{}
@@ -50,7 +50,7 @@ func checkOrAssignEnv(key, fallback string, osLookupEnv IEnvLookup, osSetEnv ISe
 	}
 }
 
-func assignEnv(key, fallback string, validate int, osSetEnv ISetEnv) { //nolint:unused
+func assignEnv(key, fallback string, validate int, osSetEnv ISetEnv) {
 	if err := osSetEnv.Setenv(key, fallback); err != nil {
 		log.Panic(err)
 	}

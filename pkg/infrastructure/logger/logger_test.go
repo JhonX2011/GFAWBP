@@ -80,7 +80,7 @@ func (s *loggerScenery) whenPanicLoggerExecuted(t *testing.T, panic bool) {
 		if panic {
 			s.logger.Panic(strMessage)
 		} else {
-			s.logger.Panicf(strMessage)
+			s.logger.Panicf(strMessage) //nolint:govet
 		}
 	})
 }

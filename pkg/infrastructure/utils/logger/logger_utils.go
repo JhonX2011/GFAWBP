@@ -51,7 +51,7 @@ func FuncInfo(funcname string) string {
 type osExitFunc func(int)
 
 // exitFunc -> Global variable to store the Exit function.
-var exitFunc osExitFunc = os.Exit
+var exitFunc osExitFunc = os.Exit //nolint:gochecknoglobals
 
 // DefaultOSExit -> Function that wraps the call to os.Exit.
 func DefaultOSExit(code int) {

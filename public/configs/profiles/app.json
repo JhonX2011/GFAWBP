@@ -5,7 +5,6 @@
     "refresh_max_retries": 5,
     "refresh_sleep_time": 300
   },
-  "pipeline_pre_opt_max_iterations": 10,
   "feature_flags": {},
   "mysql_rc_buffer": {
     "connection_name": "default",

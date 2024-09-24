@@ -26,7 +26,6 @@ const (
 	panico  = "Panic"
 	info    = "Info"
 	warning = "warning"
-	fw      = "GOAT"
 	debug   = "Debug"
 )
 
@@ -61,8 +60,8 @@ func (l *logger) Fatal(v ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), magenta, fatal, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), magenta, fatal, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
 	l.osExitFunc(1)
 }
 
@@ -70,8 +69,8 @@ func (l *logger) Fatalf(format string, args ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), magenta, fatal, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), magenta, fatal, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
 		fmt.Errorf(format, args...).Error())
 	l.osExitFunc(1)
 }
@@ -81,8 +80,8 @@ func (l *logger) Panic(v ...interface{}) {
 	s := fmt.Sprint(v...)
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), cyan, panico, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), cyan, panico, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
 	panic(s)
 }
 
@@ -91,8 +90,8 @@ func (l *logger) Panicf(format string, args ...interface{}) {
 	s := fmt.Sprintf(format, args...)
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), cyan, panico, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), cyan, panico, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
 		fmt.Errorf(format, args...).Error())
 	panic(s)
 }
@@ -101,16 +100,16 @@ func (l *logger) Error(v ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), red, gError, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), red, gError, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
 }
 
 func (l *logger) Errorf(format string, args ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), red, gError, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), red, gError, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
 		fmt.Errorf(format, args...).Error())
 }
 
@@ -118,16 +117,16 @@ func (l *logger) Info(v ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), blue, info, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), blue, info, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
 }
 
 func (l *logger) Infof(format string, args ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), blue, info, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), blue, info, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
 		fmt.Sprintf(format, args...))
 }
 
@@ -135,16 +134,16 @@ func (l *logger) Warning(v ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), yellow, warning, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), yellow, warning, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
 }
 
 func (l *logger) Warningf(format string, args ...interface{}) {
 	now := time.Now()
 	pc, fi, li, ok := runtime.Caller(value)
 	f := runtime.FuncForPC(pc).Name()
-	fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-		fw, lg.FormatNow(now), yellow, warning, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
+	fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+		lg.FormatNow(now), yellow, warning, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
 		fmt.Sprintf(format, args...))
 }
 
@@ -153,8 +152,8 @@ func (l *logger) Debug(v ...interface{}) {
 		now := time.Now()
 		pc, fi, li, ok := runtime.Caller(value)
 		f := runtime.FuncForPC(pc).Name()
-		fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-			fw, lg.FormatNow(now), green, debug, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
+		fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+			lg.FormatNow(now), green, debug, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f), v)
 	}
 }
 
@@ -163,8 +162,8 @@ func (l *logger) Debugf(format string, args ...interface{}) {
 		now := time.Now()
 		pc, fi, li, ok := runtime.Caller(value)
 		f := runtime.FuncForPC(pc).Name()
-		fmt.Printf("[%s] %s | %s %s %s | %20s | %20s | %s \n",
-			fw, lg.FormatNow(now), green, debug, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
+		fmt.Printf("%s | %s %s %s | %20s | %20s | %s \n",
+			lg.FormatNow(now), green, debug, reset, lg.FileInfo(fi, li, ok), lg.FuncInfo(f),
 			fmt.Sprintf(format, args...))
 	}
 }

@@ -1,2 +1,7 @@
+pkg/infrastructure/api
+pkg/infrastructure/initializer/
+pkg/registry/
+pkg/test/
+pkg/usecase/presenter/
+pkg/usecase/repository/
 pkg/main
-test/
