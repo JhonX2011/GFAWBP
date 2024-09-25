@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	restclient "github.com/JhonX2011/GFAWBP/pkg/test/functional/rest_client"
-	"github.com/JhonX2011/GFAWBP/pkg/test/functional/utils"
+	"github.com/JhonX2011/GFAWBP/test/functional/rest_client"
+	"github.com/JhonX2011/GFAWBP/test/functional/utils"
 	"github.com/cucumber/godog"
 )
 

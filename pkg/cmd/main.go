@@ -3,14 +3,13 @@ package main
 import (
 	"log"
 
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/api"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/configuration"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/initializer"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/logger"
 	appRegistry "github.com/JhonX2011/GFAWBP/pkg/infrastructure/registry"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/router"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/utils/environment"
-	ul "github.com/JhonX2011/GFAWBP/pkg/infrastructure/utils/logger"
+	"github.com/JhonX2011/GOWebApplication/api"
+	"github.com/JhonX2011/GOWebApplication/api/utils/logger"
 )
 
 func init() { //nolint:gochecknoinits
@@ -26,15 +25,13 @@ func main() {
 }
 
 func run() error {
-	l := logger.NewLogger(ul.DefaultOSExit)
-
-	app, err := api.NewWebApplication(l)
+	app, err := api.NewWebApplication()
 	if err != nil {
-		l.Error("Unable to start web application", err)
+		app.Logger.Error("Unable to start web application", err)
 		return err
 	}
 
-	registry, err := setupServices(l)
+	registry, err := setupServices(app.Logger)
 	if err != nil {
 		return err
 	}

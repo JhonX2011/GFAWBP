@@ -2,14 +2,17 @@ package configuration
 
 import (
 	"errors"
+	"fmt"
+	"os"
+	"path/filepath"
 	"testing"
 
 	mic "github.com/JhonX2011/GFAWBP/pkg/domain/models/internal_structs/configuration"
-	gt "github.com/JhonX2011/GFAWBP/pkg/test/generic"
+	gt "github.com/JhonX2011/GFAWBP/test/generic"
 	"github.com/stretchr/testify/assert"
 )
 
-const configDir = "../../test/doubles/testdata/"
+const configDir = "../../../test/doubles/test_data/config_profiles/"
 
 type configurationScenery struct {
 	config Configuration
@@ -58,6 +61,20 @@ func TestGetConfigNull(t *testing.T) {
 }
 
 func TestLoadConfigOk(t *testing.T) {
+	cwd, err := os.Getwd()
+	if err != nil {
+		fmt.Println("Error obteniendo el directorio de trabajo:", err)
+		return
+	}
+	absPath := filepath.Join(cwd, "../../../test/doubles/test_data/config_profiles/")
+	fmt.Println("Ruta absoluta:", absPath)
+
+	if _, err := os.Stat(absPath); os.IsNotExist(err) {
+		fmt.Println("La ruta no existe:", absPath)
+	} else {
+		fmt.Println("La ruta existe:", absPath)
+	}
+
 	s := givenConfigurationScenery()
 	s.givenEnvironmentVariables(t)
 	s.whenLoadConfigIsCall()

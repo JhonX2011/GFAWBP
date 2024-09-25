@@ -4,6 +4,7 @@ go 1.23.1
 
 require (
 	github.com/JhonX2011/GOFunctionalTestsMocker v0.0.0-20240923034600-ba297977617d
+	github.com/JhonX2011/GOWebApplication v1.0.1
 	github.com/cucumber/godog v0.14.1
 	github.com/go-chi/chi/v5 v5.1.0
 	github.com/google/uuid v1.6.0

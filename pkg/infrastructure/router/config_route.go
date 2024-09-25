@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	mcs "github.com/JhonX2011/GFAWBP/pkg/domain/models/cross_structs"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/api/web"
 	"github.com/JhonX2011/GFAWBP/pkg/interface/controller"
+	"github.com/JhonX2011/GOWebApplication/api/web"
 )
 
 type configRoute struct {
@@ -17,7 +17,7 @@ func NewConfigRoute(i controller.ConfigController) Route {
 }
 
 func (p *configRoute) Config(group *web.RouteGroup) {
-	group.Post("/refresh_config", p.refreshConfig)
+	group.Post("/refresh_configs", p.refreshConfig)
 	group.Get("/app_configs", p.getConfigsHandler)
 }
 

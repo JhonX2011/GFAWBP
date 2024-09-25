@@ -1,5 +1,9 @@
 github.com/JhonX2011/GOFunctionalTestsMocker v0.0.0-20240923034600-ba297977617d h1:4h5Cvl9QFQzXrCYx/zlMKwbXbZ2R00YkPLKJB1jc4pE=
 github.com/JhonX2011/GOFunctionalTestsMocker v0.0.0-20240923034600-ba297977617d/go.mod h1:1yTpoZMC25UmTu6lCeo4xwUxHQeApuVfhmvaarcGeaQ=
+github.com/JhonX2011/GOWebApplication v0.0.0-20240924230846-d08982a222b6 h1:0fRcWpcIiRnaJohOVpDTbLqTrbmLVG9d7nR+J9NJIKg=
+github.com/JhonX2011/GOWebApplication v0.0.0-20240924230846-d08982a222b6/go.mod h1:eqw4oOvaz/jqeT0w82ivRhKTS2UgG6NTaaPnIFKnJFo=
+github.com/JhonX2011/GOWebApplication v1.0.1 h1:XZMabiSwDWZwZp8woAcOFmWTalIzeOwMyPq+vH37ZrQ=
+github.com/JhonX2011/GOWebApplication v1.0.1/go.mod h1:eqw4oOvaz/jqeT0w82ivRhKTS2UgG6NTaaPnIFKnJFo=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/cucumber/gherkin/go/v26 v26.2.0 h1:EgIjePLWiPeslwIWmNQ3XHcypPsWAHoMCz/YEBKP4GI=
 github.com/cucumber/gherkin/go/v26 v26.2.0/go.mod h1:t2GAPnB8maCT4lkHL99BDCVNzCh1d7dBhCLt150Nr/0=

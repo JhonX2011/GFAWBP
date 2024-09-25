@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	restclient "github.com/JhonX2011/GFAWBP/pkg/test/functional/rest_client"
+	"github.com/JhonX2011/GFAWBP/test/functional/rest_client"
 	"github.com/google/uuid"
 )
 

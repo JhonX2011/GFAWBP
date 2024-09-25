@@ -5,10 +5,10 @@ import (
 	"testing"
 
 	mic "github.com/JhonX2011/GFAWBP/pkg/domain/models/internal_structs/configuration"
-	"github.com/JhonX2011/GFAWBP/pkg/test/doubles"
-	gt "github.com/JhonX2011/GFAWBP/pkg/test/generic"
-	infrastructuremock "github.com/JhonX2011/GFAWBP/pkg/test/mocks/infrastructure"
-	presentermock "github.com/JhonX2011/GFAWBP/pkg/test/mocks/presenter"
+	"github.com/JhonX2011/GFAWBP/test/doubles"
+	gt "github.com/JhonX2011/GFAWBP/test/generic"
+	"github.com/JhonX2011/GFAWBP/test/mocks/infrastructure"
+	"github.com/JhonX2011/GFAWBP/test/mocks/presenter"
 	"github.com/stretchr/testify/mock"
 )
 

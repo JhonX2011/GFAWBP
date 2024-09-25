@@ -8,11 +8,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/api"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/logger"
-	ul "github.com/JhonX2011/GFAWBP/pkg/infrastructure/utils/logger"
 	ut "github.com/JhonX2011/GFAWBP/pkg/infrastructure/utils/test"
-	controllermock "github.com/JhonX2011/GFAWBP/pkg/test/mocks/controller"
+	"github.com/JhonX2011/GFAWBP/test/mocks/controller"
+	"github.com/JhonX2011/GOWebApplication/api"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -33,8 +31,7 @@ func givenConfigRouteScenery() *configRouteScenery {
 }
 
 func (c *configRouteScenery) givenConfigRouteApp() {
-	l := logger.NewLogger(ul.DefaultOSExit)
-	app, err := api.NewWebApplication(l)
+	app, err := api.NewWebApplication()
 	if err != nil {
 		panic("Error to create mock server")
 	}
@@ -50,7 +47,7 @@ func (c *configRouteScenery) givenConfigRouteServer() {
 }
 
 func (c *configRouteScenery) whenRefreshConfigRequest(body io.Reader, err error) {
-	url := fmt.Sprintf("%s/refresh_config", c.server.URL)
+	url := fmt.Sprintf("%s/refresh_configs", c.server.URL)
 	c.configControllerMock.On("RefreshConfiguration").Return(err)
 	aResult, aError := ut.ExecuteRequest(url, body, http.MethodPost)
 	c.aResult, c.aError = aResult, aError
@@ -58,7 +55,7 @@ func (c *configRouteScenery) whenRefreshConfigRequest(body io.Reader, err error)
 }
 
 func (c *configRouteScenery) whenGetConfigRequest(err error) {
-	url := fmt.Sprintf("%s/configs", c.server.URL)
+	url := fmt.Sprintf("%s/app_configs", c.server.URL)
 	c.configControllerMock.On("GetConfigs").Return(nil, err)
 	aResult, aError := ut.ExecuteRequest(url, nil, http.MethodGet)
 	c.aResult, c.aError = aResult, aError

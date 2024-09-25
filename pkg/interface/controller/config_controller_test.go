@@ -6,11 +6,11 @@ import (
 	"testing"
 
 	mcs "github.com/JhonX2011/GFAWBP/pkg/domain/models/cross_structs"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/logger"
-	ul "github.com/JhonX2011/GFAWBP/pkg/infrastructure/utils/logger"
-	"github.com/JhonX2011/GFAWBP/pkg/test/doubles"
-	interactormock "github.com/JhonX2011/GFAWBP/pkg/test/mocks/interactor"
-	presentermock "github.com/JhonX2011/GFAWBP/pkg/test/mocks/presenter"
+	"github.com/JhonX2011/GFAWBP/test/doubles"
+	"github.com/JhonX2011/GFAWBP/test/mocks/interactor"
+	"github.com/JhonX2011/GFAWBP/test/mocks/presenter"
+	"github.com/JhonX2011/GOWebApplication/api/utils/logger"
+	ul "github.com/JhonX2011/GOWebApplication/api/utils/logger"
 	"github.com/stretchr/testify/assert"
 )
 

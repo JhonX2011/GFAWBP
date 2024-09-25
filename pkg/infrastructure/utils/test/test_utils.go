@@ -10,5 +10,6 @@ func ExecuteRequest(url string, body io.Reader, methodHTTP string) (*http.Respon
 	cli := &http.Client{}
 	req, _ := http.NewRequestWithContext(context.Background(), methodHTTP, url, body)
 	req.Header.Set("Content-Type", "application/json")
-	return cli.Do(req)
+	response, err := cli.Do(req)
+	return response, err
 }

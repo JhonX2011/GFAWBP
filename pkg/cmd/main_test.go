@@ -5,17 +5,17 @@ import (
 	"os"
 	"testing"
 
-	restclient "github.com/JhonX2011/GFAWBP/pkg/test/functional/rest_client"
-	defaultsteps "github.com/JhonX2011/GFAWBP/pkg/test/functional/steps/default"
-	"github.com/JhonX2011/GFAWBP/pkg/test/functional/steps/ping"
-	"github.com/JhonX2011/GFAWBP/pkg/test/functional/utils"
+	"github.com/JhonX2011/GFAWBP/test/functional/rest_client"
+	"github.com/JhonX2011/GFAWBP/test/functional/steps/default"
+	"github.com/JhonX2011/GFAWBP/test/functional/steps/ping"
+	utils2 "github.com/JhonX2011/GFAWBP/test/functional/utils"
 	"github.com/JhonX2011/GOFunctionalTestsMocker/pkg/mock"
 	"github.com/cucumber/godog"
 )
 
 const (
-	pingSceneryPath = "../test/functional/features/ping"
-	mainSceneryPath = "../test/functional/features/default"
+	pingSceneryPath = "../../test/functional/features/ping"
+	mainSceneryPath = "../../test/functional/features/default"
 )
 
 func TestSuites(t *testing.T) {
@@ -28,7 +28,7 @@ func TestSuites(t *testing.T) {
 		}
 	}()
 
-	err := utils.WaitServerRunning()
+	err := utils2.WaitServerRunning()
 	if err != nil {
 		t.Errorf("failed awaiting server up when runinng test suites")
 		t.Fail()
@@ -46,7 +46,7 @@ func TestSuites(t *testing.T) {
 
 func runMockServer(t *testing.T, err error, mockServer mock.Router) {
 	go func() {
-		err = mockServer.Run(utils.MockServerAddress)
+		err = mockServer.Run(utils2.MockServerAddress)
 		if err != nil {
 			t.Error(err)
 			t.Fail()
@@ -107,5 +107,5 @@ func pingSceneryInitializer(s *godog.ScenarioContext) {
 }
 
 func loadTestEnvironment() {
-	os.Setenv("CONFIG_DIR", "../../pkg/test/functional/test_config_files/")
+	os.Setenv("CONFIG_DIR", "../../test/doubles/test_data/config_profiles/")
 }

@@ -3,9 +3,9 @@ package controller
 import (
 	"net/http"
 
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/logger"
 	"github.com/JhonX2011/GFAWBP/pkg/interface/presenter"
 	"github.com/JhonX2011/GFAWBP/pkg/usecase/interactor"
+	"github.com/JhonX2011/GOWebApplication/api/utils/logger"
 )
 
 const initialRetry int = 1

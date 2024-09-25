@@ -2,8 +2,8 @@ package registry
 
 import (
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/configuration"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/logger"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/router"
+	"github.com/JhonX2011/GOWebApplication/api/utils/logger"
 )
 
 type registry struct {

@@ -3,8 +3,8 @@ package router
 import (
 	"net/http"
 
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/api"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/api/web"
+	"github.com/JhonX2011/GOWebApplication/api"
+	"github.com/JhonX2011/GOWebApplication/api/web"
 )
 
 type router struct {

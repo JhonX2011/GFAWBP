@@ -4,10 +4,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/api"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/api/web"
-	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/logger"
-	ul "github.com/JhonX2011/GFAWBP/pkg/infrastructure/utils/logger"
+	"github.com/JhonX2011/GOWebApplication/api"
+	"github.com/JhonX2011/GOWebApplication/api/web"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -19,8 +17,7 @@ type routerScenery struct {
 }
 
 func givenRouterScenery() *routerScenery {
-	l := logger.NewLogger(ul.DefaultOSExit)
-	app, _ := api.NewWebApplication(l)
+	app, _ := api.NewWebApplication()
 	return &routerScenery{
 		routerClient: NewRouter(app),
 		routerRoot:   NewRouterRoot(app),

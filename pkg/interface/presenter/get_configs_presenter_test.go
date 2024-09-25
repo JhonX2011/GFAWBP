@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	mcs "github.com/JhonX2011/GFAWBP/pkg/domain/models/cross_structs"
-	gt "github.com/JhonX2011/GFAWBP/pkg/test/generic"
+	gt "github.com/JhonX2011/GFAWBP/test/generic"
 )
 
 type getConfigsPresenterScenery struct {

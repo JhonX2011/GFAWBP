@@ -12,10 +12,10 @@ const (
 	QueryGetSomeInfo string = "SELECT * FROM `information`"
 )
 
-//go:embed test_data/app.json
+//go:embed test_data/config_profiles/app.json
 var appConfigProfile string
 
-//go:embed test_data/services.json
+//go:embed test_data/config_profiles/services.json
 var servicesConfigProfile string
 
 func GetAppConfigProfileInByte() []byte {
