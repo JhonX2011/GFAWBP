@@ -4,10 +4,9 @@ go 1.23.1
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
-	github.com/JhonX2011/GOFunctionalTestsMocker v0.0.0-20240923034600-ba297977617d
+	github.com/JhonX2011/GOFunctionalTestsMocker v1.0.0
 	github.com/JhonX2011/GOWebApplication v1.1.0
 	github.com/cucumber/godog v0.14.1
-	github.com/go-sql-driver/mysql v1.8.1
 	github.com/google/uuid v1.6.0
 	github.com/stretchr/testify v1.9.0
 	gorm.io/driver/mysql v1.5.7
@@ -16,11 +15,11 @@ require (
 )
 
 require (
-	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/cucumber/gherkin/go/v26 v26.2.0 // indirect
 	github.com/cucumber/messages/go/v21 v21.0.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-chi/chi/v5 v5.1.0 // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/gofrs/uuid v4.3.1+incompatible // indirect
 	github.com/hashicorp/go-immutable-radix v1.3.1 // indirect
 	github.com/hashicorp/go-memdb v1.3.4 // indirect

@@ -1,9 +1,7 @@
-filippo.io/edwards25519 v1.1.0 h1:FNf4tywRC1HmFuKW5xopWpigGjJKiJSV0Cqo0cJWDaA=
-filippo.io/edwards25519 v1.1.0/go.mod h1:BxyFTGdWcka3PhytdK4V28tE5sGfRvvvRV7EaN4VDT4=
 github.com/DATA-DOG/go-sqlmock v1.5.2 h1:OcvFkGmslmlZibjAjaHm3L//6LiuBgolP7OputlJIzU=
 github.com/DATA-DOG/go-sqlmock v1.5.2/go.mod h1:88MAG/4G7SMwSE3CeA0ZKzrT5CiOU3OJ+JlNzwDqpNU=
-github.com/JhonX2011/GOFunctionalTestsMocker v0.0.0-20240923034600-ba297977617d h1:4h5Cvl9QFQzXrCYx/zlMKwbXbZ2R00YkPLKJB1jc4pE=
-github.com/JhonX2011/GOFunctionalTestsMocker v0.0.0-20240923034600-ba297977617d/go.mod h1:1yTpoZMC25UmTu6lCeo4xwUxHQeApuVfhmvaarcGeaQ=
+github.com/JhonX2011/GOFunctionalTestsMocker v1.0.0 h1:eYfR03AyA2jN8gHIRdyGzx3UT5yJyUkmNLhUcRUpG2o=
+github.com/JhonX2011/GOFunctionalTestsMocker v1.0.0/go.mod h1:1yTpoZMC25UmTu6lCeo4xwUxHQeApuVfhmvaarcGeaQ=
 github.com/JhonX2011/GOWebApplication v1.1.0 h1:PYKQ1TvrFrSnZVZOZ9hHsdz9BaK1pLtijgaPJfo6o7c=
 github.com/JhonX2011/GOWebApplication v1.1.0/go.mod h1:sJfwclRAO8PoLZf45V56FfyIv6EPEPZmi/AkDFQ5lBA=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
@@ -19,9 +17,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-chi/chi/v5 v5.1.0 h1:acVI1TYaD+hhedDJ3r54HyA6sExp3HfXq7QWEEY/xMw=
 github.com/go-chi/chi/v5 v5.1.0/go.mod h1:DslCQbL2OYiznFReuXYUmQ2hGd1aDpCnlMNITLSKoi8=
+github.com/go-sql-driver/mysql v1.7.0 h1:ueSltNNllEqE3qcWBTD0iQd3IpL/6U+mJxLkazJ7YPc=
 github.com/go-sql-driver/mysql v1.7.0/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
-github.com/go-sql-driver/mysql v1.8.1 h1:LedoTUt/eveggdHS9qUFC1EFSa8bU2+1pZjSRpvNJ1Y=
-github.com/go-sql-driver/mysql v1.8.1/go.mod h1:wEBSXgmK//2ZFJyE+qWnIsVGmvmEKlqwuVSjsCm7DZg=
 github.com/gofrs/uuid v4.2.0+incompatible/go.mod h1:b2aQJv3Z4Fp6yNu3cdSllBxTCLRxnplIgP/c0N/04lM=
 github.com/gofrs/uuid v4.3.1+incompatible h1:0/KbAdpx3UXAx1kEOWHJeOkpbgRFGHVgv+CFIY7dBJI=
 github.com/gofrs/uuid v4.3.1+incompatible/go.mod h1:b2aQJv3Z4Fp6yNu3cdSllBxTCLRxnplIgP/c0N/04lM=
