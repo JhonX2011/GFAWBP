@@ -6,7 +6,7 @@
     "refresh_sleep_time": 300
   },
   "feature_flags": {},
-  "mysql_rc_buffer": {
+  "mysql_database": {
     "connection_name": "default",
     "max_retries": 1,
     "retry_interval_time": 3,

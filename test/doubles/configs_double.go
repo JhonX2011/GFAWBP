@@ -74,7 +74,7 @@ func GetResponseConfigurations() mcs.Configurations {
 func GetDatabaseConfig(queryID string) *mic.Configurations {
 	return &mic.Configurations{
 		App: mic.AppProfile{
-			MySQLRCBuffer: mic.DBConnection{
+			MySQLDatabase: mic.DBConnection{
 				MaxRetries:        3,
 				RetryIntervalTime: 10,
 			},

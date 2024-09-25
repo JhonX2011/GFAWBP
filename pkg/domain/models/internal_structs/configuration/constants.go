@@ -32,7 +32,9 @@ const ()
 const ()
 
 // -- Database names
-const ()
+const (
+	MySqlDB = "DefaultDB"
+)
 
 // -- Database queries
 const ()

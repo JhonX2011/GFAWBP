@@ -1,0 +1,8 @@
+{
+    "dsn": "root:password@tcp(localhost:3306)/my_schema?timeout=100ms&readTimeout=100ms&writeTimeout=100ms&parseTime=true",
+    "connections": [
+      {
+        "name": "default"
+      }
+    ]
+}

@@ -4,12 +4,13 @@ import (
 	"log"
 
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/configuration"
+	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/database/gorm"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/initializer"
 	appRegistry "github.com/JhonX2011/GFAWBP/pkg/infrastructure/registry"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/router"
 	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/utils/environment"
 	"github.com/JhonX2011/GOWebApplication/api"
-	"github.com/JhonX2011/GOWebApplication/api/utils/logger"
+	"github.com/JhonX2011/GOWebApplication/utils/logger"
 )
 
 func init() { //nolint:gochecknoinits
@@ -47,20 +48,28 @@ func setupServices(l logger.Logger) (appRegistry.Registry, error) {
 		return nil, err
 	}
 
+	gormClient, err := initializer.InitDatabaseMySQLClient(configClient)
+	if err != nil {
+		return nil, err
+	}
+
 	return createRegistry(
 		l,
 		configClient,
+		gormClient,
 	)
 }
 
 func createRegistry(
 	l logger.Logger,
 	configClient configuration.Configuration,
+	gormClient gorm.IClientGorm,
 ) (appRegistry.Registry, error) {
 
 	return appRegistry.NewRegistry(
 		l,
 		configClient,
+		gormClient,
 	), nil
 }
 

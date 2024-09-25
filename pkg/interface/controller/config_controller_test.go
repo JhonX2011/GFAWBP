@@ -9,8 +9,8 @@ import (
 	"github.com/JhonX2011/GFAWBP/test/doubles"
 	"github.com/JhonX2011/GFAWBP/test/mocks/interactor"
 	"github.com/JhonX2011/GFAWBP/test/mocks/presenter"
-	"github.com/JhonX2011/GOWebApplication/api/utils/logger"
-	ul "github.com/JhonX2011/GOWebApplication/api/utils/logger"
+	"github.com/JhonX2011/GOWebApplication/utils/logger"
+	ul "github.com/JhonX2011/GOWebApplication/utils/logger"
 	"github.com/stretchr/testify/assert"
 )
 

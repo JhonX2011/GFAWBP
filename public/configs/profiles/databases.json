@@ -1,8 +1,8 @@
 {
   "mysql": [
     {
-      "service_id": "base_db",
-      "dsn": "username:password@tcp(url:port)/db_name?timeout=100000ms&readTimeout=100000ms&writeTimeout=10000ms&parseTime=true",
+      "service_id": "DefaultDB",
+      "dsn": "root:1n7012m4t1c4@tcp(127.0.0.1:3306)/test?timeout=100000ms&readTimeout=100000ms&writeTimeout=10000ms&parseTime=true",
       "connections": [
         {
           "name": "default"

@@ -5,7 +5,7 @@ import (
 
 	"github.com/JhonX2011/GFAWBP/pkg/interface/presenter"
 	"github.com/JhonX2011/GFAWBP/pkg/usecase/interactor"
-	"github.com/JhonX2011/GOWebApplication/api/utils/logger"
+	"github.com/JhonX2011/GOWebApplication/utils/logger"
 )
 
 const initialRetry int = 1
