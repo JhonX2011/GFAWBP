@@ -97,7 +97,9 @@ func LoadEnvironment() {
 	checkOrAssignEnv("APP_NAME", config.AppName, NewEnvLookup(), NewSetEnv())
 	checkOrAssignEnv("ENVIRONMENT", config.Environment, NewEnvLookup(), NewSetEnv())
 	checkOrAssignEnv("STACK", config.Stack, NewEnvLookup(), NewSetEnv())
+	checkOrAssignEnv("MODE_DEBUG", config.ModeDebug, NewEnvLookup(), NewSetEnv())
 	if os.Getenv("ENVIRONMENT") == "development" {
+		checkOrAssignEnv("DATABASE_MIGRATION_ENABLED", config.DatabaseMigrationEnabled, NewEnvLookup(), NewSetEnv())
 		checkOrAssignEnv("PORT", config.Port, NewEnvLookup(), NewSetEnv())
 		checkOrAssignEnv("CONFIG_DIR", config.ConfigDir, NewEnvLookup(), NewSetEnv())
 	}
@@ -106,11 +108,13 @@ func LoadEnvironment() {
 func PrintEnv() {
 	fmt.Println("***********************************************************************")
 	fmt.Println("***********************************************************************")
-	fmt.Printf("APP_NAME    ==> [%v]\n", os.Getenv("APP_NAME"))
-	fmt.Printf("ENVIRONMENT ==> [%v]\n", os.Getenv("ENVIRONMENT"))
-	fmt.Printf("PORT        ==> [%v]\n", os.Getenv("PORT"))
-	fmt.Printf("STACK       ==> [%v]\n", os.Getenv("STACK"))
-	fmt.Printf("CONFIG_DIR  ==> [%v]\n", os.Getenv("CONFIG_DIR"))
+	fmt.Printf("APP_NAME                    ==> [%v]\n", os.Getenv("APP_NAME"))
+	fmt.Printf("ENVIRONMENT                 ==> [%v]\n", os.Getenv("ENVIRONMENT"))
+	fmt.Printf("PORT                        ==> [%v]\n", os.Getenv("PORT"))
+	fmt.Printf("STACK                       ==> [%v]\n", os.Getenv("STACK"))
+	fmt.Printf("MODE_DEBUG                  ==> [%v]\n", os.Getenv("MODE_DEBUG"))
+	fmt.Printf("CONFIG_DIR                  ==> [%v]\n", os.Getenv("CONFIG_DIR"))
+	fmt.Printf("DATABASE_MIGRATION_ENABLED  ==> [%v]\n", os.Getenv("DATABASE_MIGRATION_ENABLED"))
 	fmt.Println("***********************************************************************")
 	fmt.Println("***********************************************************************")
 }

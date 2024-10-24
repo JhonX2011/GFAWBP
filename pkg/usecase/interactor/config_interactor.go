@@ -1,9 +1,7 @@
 package interactor
 
 import (
-	"errors"
 	"fmt"
-	"strconv"
 	"time"
 
 	mcs "github.com/JhonX2011/GFAWBP/pkg/domain/models/cross_structs"
@@ -56,6 +54,7 @@ func (p *configInteractor) Reload(retry int) error {
 	return err
 }
 
+// GetConfigurations TODO: improve get configs method with a json response
 func (p *configInteractor) GetConfigurations() (interface{}, error) {
 	var appConfig map[string]interface{}
 
@@ -63,12 +62,8 @@ func (p *configInteractor) GetConfigurations() (interface{}, error) {
 		return nil, err
 	}
 
-	if debug, ok := appConfig["MODE_DEBUG"]; !ok || !debug.(bool) {
-		return nil, errors.New("GetConfigurations: disabled")
-	}
-
-	stringKeys := map[string]string{"APP_NAME": "fbm-invcontrol-dispatcher", "ENVIRONMENT": "local2", "STACK": "Go2"}
-	boolKeys := map[string]bool{"MODE_DEBUG": false}
+	stringKeys := map[string]string{"APP_NAME": "GFAWBP", "ENVIRONMENT": "local", "STACK": "Go"}
+	//boolKeys := map[string]bool{"MODE_DEBUG": false}
 
 	var configs []mcs.ConfigMember
 	for configName, defaultValue := range stringKeys {
@@ -80,15 +75,15 @@ func (p *configInteractor) GetConfigurations() (interface{}, error) {
 		configs = append(configs, mcs.ConfigMember{Name: configName, Value: defaultValue})
 	}
 
-	for configName, defaultValue := range boolKeys {
-		if value, ok := appConfig[configName]; ok {
-			if boolValue, ok2 := value.(bool); ok2 {
-				defaultValue = boolValue
-			}
-		}
-		member := mcs.ConfigMember{Name: configName, Value: strconv.FormatBool(defaultValue)}
-		configs = append(configs, member)
-	}
+	//for configName, defaultValue := range boolKeys {
+	//	if value, ok := appConfig[configName]; ok {
+	//		if boolValue, ok2 := value.(bool); ok2 {
+	//			defaultValue = boolValue
+	//		}
+	//	}
+	//	member := mcs.ConfigMember{Name: configName, Value: strconv.FormatBool(defaultValue)}
+	//	configs = append(configs, member)
+	//}
 
 	return p.GetConfigPresenter.ResponseGetConfigs(configs), nil
 }

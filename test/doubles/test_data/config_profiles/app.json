@@ -1,6 +1,4 @@
 {
-  "APP_NAME": "GFAWBP",
-  "MODE_DEBUG": true,
   "config": {
     "refresh_max_retries": 5,
     "refresh_sleep_time": 300

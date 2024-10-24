@@ -1,4 +1,4 @@
-package entities
+package queries
 
 type MovablesByInventoryIDResult struct {
 	InventoryID string

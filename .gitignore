@@ -45,7 +45,6 @@ sandbox/
 .DS_Store
 *.iml
 *.iml
-fury_fbm-invcontrol-optimizer.iml
 *.html
 *.js
 *.css

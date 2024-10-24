@@ -3,7 +3,7 @@ package entities
 import (
 	"time"
 
-	"github.com/JhonX2011/GFAWBP/pkg/domain/models/internal_structs/entities"
+	"github.com/JhonX2011/GFAWBP/pkg/domain/models/internal_structs/database/entities"
 )
 
 type Events struct {

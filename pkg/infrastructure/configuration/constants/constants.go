@@ -1,9 +1,11 @@
 package constants
 
 const (
-	Environment = "development"
-	AppName     = "GFAWBP"
-	Port        = "8080"
-	Stack       = "Go"
-	ConfigDir   = "public/configs/profiles"
+	DatabaseMigrationEnabled = "false"
+	ModeDebug                = "true"
+	AppName                  = "GFAWBP"
+	Environment              = "development"
+	Port                     = "8080"
+	Stack                    = "Go"
+	ConfigDir                = "public/configs/profiles"
 )

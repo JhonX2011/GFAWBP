@@ -1,12 +1,11 @@
 {
-  "APP_NAME": "GFAWBP",
-  "MODE_DEBUG": true,
   "config": {
     "refresh_max_retries": 5,
     "refresh_sleep_time": 300
   },
   "feature_flags": {},
   "mysql_database": {
+    "disable_foreign_key_constraint_when_migrating": true,
     "connection_name": "default",
     "max_retries": 1,
     "retry_interval_time": 3,

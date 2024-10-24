@@ -18,10 +18,11 @@ type (
 		MySQLDatabase DBConnection    `json:"mysql_database"`
 	}
 	DBConnection struct {
-		ConnectionName    string        `json:"connection_name"`
-		MaxRetries        int           `json:"max_retries"`
-		RetryIntervalTime time.Duration `json:"retry_interval_time"`
-		LogQueries        bool          `json:"log_queries"`
+		DisableForeignKeyConstraintWhenMigrating bool          `json:"disable_foreign_key_constraint_when_migrating"`
+		ConnectionName                           string        `json:"connection_name"`
+		MaxRetries                               int           `json:"max_retries"`
+		RetryIntervalTime                        time.Duration `json:"retry_interval_time"`
+		LogQueries                               bool          `json:"log_queries"`
 	}
 )
 

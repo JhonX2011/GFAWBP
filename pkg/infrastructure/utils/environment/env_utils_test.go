@@ -251,7 +251,7 @@ func TestGetEncodeStringFeatureFail(t *testing.T) {
 func TestLoadEnvironment(t *testing.T) {
 	e := givenEnvScenery(t)
 	t.Setenv("ENVIRONMENT", "prod")
-	t.Setenv("APP_NAME", "fury_fbm-invcontrol-dispatcher")
+	t.Setenv("APP_NAME", "GFAWBP")
 	t.Setenv("PORT", "8081")
 	t.Setenv("STACK", "Go")
 	t.Setenv("MODE_DEBUG", "0")
@@ -260,7 +260,7 @@ func TestLoadEnvironment(t *testing.T) {
 
 	e.givenEnvironment()
 	e.thenEqual(t, "prod", os.Getenv("ENVIRONMENT"))
-	e.thenEqual(t, "fury_fbm-invcontrol-dispatcher", os.Getenv("APP_NAME"))
+	e.thenEqual(t, "GFAWBP", os.Getenv("APP_NAME"))
 	e.thenEqual(t, "8081", os.Getenv("PORT"))
 	e.thenEqual(t, "Go", os.Getenv("STACK"))
 	e.thenEqual(t, "0", os.Getenv("MODE_DEBUG"))
@@ -271,7 +271,7 @@ func TestLoadEnvironment(t *testing.T) {
 func TestLoadEnvironmentLocal(t *testing.T) {
 	e := givenEnvScenery(t)
 	t.Setenv("ENVIRONMENT", "local")
-	t.Setenv("APP_NAME", "fury_fbm-invcontrol-dispatcher")
+	t.Setenv("APP_NAME", "GFAWBP")
 	t.Setenv("PORT", "8081")
 	t.Setenv("STACK", "Go")
 	t.Setenv("MODE_DEBUG", "0")
@@ -280,7 +280,7 @@ func TestLoadEnvironmentLocal(t *testing.T) {
 
 	e.givenEnvironment()
 	e.thenEqual(t, "local", os.Getenv("ENVIRONMENT"))
-	e.thenEqual(t, "fury_fbm-invcontrol-dispatcher", os.Getenv("APP_NAME"))
+	e.thenEqual(t, "GFAWBP", os.Getenv("APP_NAME"))
 	e.thenEqual(t, "8081", os.Getenv("PORT"))
 	e.thenEqual(t, "Go", os.Getenv("STACK"))
 	e.thenEqual(t, "0", os.Getenv("MODE_DEBUG"))

@@ -7,6 +7,7 @@ import (
 	"time"
 
 	mic "github.com/JhonX2011/GFAWBP/pkg/domain/models/internal_structs/configuration"
+	"github.com/JhonX2011/GFAWBP/pkg/infrastructure/database/entities"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
@@ -29,15 +30,23 @@ type (
 	}
 )
 
-func NewGormClient(dialector gorm.Dialector, config *mic.DBConnection) (IClientGorm, error) {
-	gormDB, err := gorm.Open(dialector, getGormConfig(config))
+func NewGormClient(dialector gorm.Dialector, dbConfig *mic.DBConnection) (IClientGorm, error) {
+	gormDB, err := gorm.Open(dialector, getGormConfig(dbConfig))
 	if err != nil {
 		return nil, err
 	}
 
+	if os.Getenv("DATABASE_MIGRATION_ENABLED") == "true" {
+		migrator := gormDB.Migrator()
+		err = migrator.AutoMigrate(&entities.Events{}, &entities.Movables{}, &entities.Inventories{})
+		if err != nil {
+			return nil, err
+		}
+	}
+
 	return &gormClient{
 		db:     gormDB,
-		config: config,
+		config: dbConfig,
 	}, nil
 }
 
@@ -72,6 +81,7 @@ func getGormConfig(config *mic.DBConnection) *gorm.Config {
 	}
 
 	return &gorm.Config{
+		DisableForeignKeyConstraintWhenMigrating: config.DisableForeignKeyConstraintWhenMigrating,
 		Logger: logger.New(
 			log.New(os.Stdout, "\r\n", log.LstdFlags),
 			logger.Config{
