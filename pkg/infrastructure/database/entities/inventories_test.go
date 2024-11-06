@@ -3,7 +3,7 @@ package entities
 import (
 	"testing"
 
-	"github.com/JhonX2011/GFAWBP/pkg/domain/models/internal_structs/entities"
+	"github.com/JhonX2011/GFAWBP/pkg/domain/models/internal_structs/database/entities"
 	"github.com/JhonX2011/GFAWBP/test/doubles/database"
 	gt "github.com/JhonX2011/GFAWBP/test/generic"
 )
